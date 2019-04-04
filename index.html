@@ -34,6 +34,64 @@
           <h2>OAuth 2.0</h2>
           <h6><small>Antonio Gámiz</small></h6>
         </section>
+        <section>
+          <p>
+            ¿Qué es OAuth 2.0?
+          </p>
+          <a href="https://tools.ietf.org/html/rfc5849">RFC-5849</a>
+          <a href="https://tools.ietf.org/html/rfc6749">RFC-6749</a>
+          <a href="https://tools.ietf.org/html/rfc8252">RFC-8252</a>
+        </section>
+        <section>
+          <h3>Tipos de Grant</h3>
+          <ul>
+            <li>Authorization code grant</li>
+            <li>Implicit grant</li>
+            <li>Resource owner credentials grant</li>
+            <li>Client credentials grant</li>
+            <li>Refresh token grant</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Glosario</h3>
+          <ul>
+            <li class="fragment">autentificación !== autorización</li>
+            <li class="fragment">Resource owner (el usuario)</li>
+            <li class="fragment">Resource server (la API)</li>
+            <li class="fragment">Client</li>
+            <li class="fragment">Authorization server</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Authorization code grant</h4>
+          <pre>
+			  <code class="hljs" data-trim data-line-numbers="3-7">
+				https://YOUR_DOMAIN/authorize?
+				scope=YOUR_SCOPE&
+				response_type=code&
+				client_id=YOUR_CLIENT_ID&
+				redirect_uri=https://YOUR_APP/callback&
+				state=I3gb0os6aQi!@kqHaaMxe$jwR8caXg3
+				</code>
+			</pre>
+          <pre class="fragment">
+			<code class="hljs" data-trim >
+				code:eTIzMRbauqIaqAtaGUbDKFukiitgIlkX
+				state:I3gb0os6aQi!@kqHaaMxe$jwR8caXg3
+			</code>
+		</pre>
+          <pre class="fragment">
+			  <code class="hljs" data-trim>
+					curl --request POST \
+					--url 'https://YOUR_DOMAIN/oauth/token' \
+					--header 'content-type: application/x-www-form-urlencoded' \
+					--data '{"grant_type":"authorization_code","client_id": "YOUR_CLIENT_ID","client_secret": "YOUR_CLIENT_SECRET","code": "YOUR_AUTHORIZATION_CODE","redirect_uri": "https://YOUR_APP/callback"}'
+			  </code>
+		  </pre>
+        </section>
+        <section>
+          <img src="/images/authorization_code.png" />
+        </section>
       </div>
     </div>
 
@@ -44,6 +102,7 @@
       // - https://github.com/hakimel/reveal.js#configuration
       // - https://github.com/hakimel/reveal.js#dependencies
       Reveal.initialize({
+        history: true,
         dependencies: [
           { src: "plugin/markdown/marked.js" },
           { src: "plugin/markdown/markdown.js" },

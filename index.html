@@ -101,45 +101,10 @@
         </section>
         <section>
           <img src="/images/flow.png" alt="flow" />
-        </section>
-        <!-- <section>
-        <section>
-          <h4>Authorization code grant</h4>
-          <pre>
-              <code class="hljs" data-trim data-line-numbers="3-7">
-                https://YOUR_DOMAIN/authorize?
-                scope=YOUR_SCOPE&
-                response_type=code&
-                client_id=YOUR_CLIENT_ID&
-                redirect_uri=https://YOUR_APP/callback&
-                state=I3gb0os6aQi!@kqHaaMxe$jwR8caXg3
-              </code>
-            </pre>
-          <pre class="fragment">
-              <code class="hljs" data-trim >
-                code:eTIzMRbauqIaqAtaGUbDKFukiitgIlkX
-                state:I3gb0os6aQi!@kqHaaMxe$jwR8caXg3
-              </code>
-            </pre>
-          <pre class="fragment">
-              <code class="hljs" data-trim>
-                curl --request POST \
-                --url 'https://YOUR_DOMAIN/oauth/token' \
-                --header 'content-type: application/x-www-form-urlencoded' \
-                --data '{"grant_type":"authorization_code","client_id": "YOUR_CLIENT_ID","client_secret": "YOUR_CLIENT_SECRET","code": "YOUR_AUTHORIZATION_CODE","redirect_uri": "https://YOUR_APP/callback"}'
-              </code>
-            </pre>
           <aside class="notes">
-            CSRF (cross-site request forgery, one-click attack o session
-            riding) es un tipo de exploit malicioso donde comandos no
-            autorizados son transmitidos desde un usuario a una aplicación web
-            que confía en el usuario.
+            nos presentamos, pedimos la llave, usamos la llave
           </aside>
         </section>
-        <section>
-          <img src="/images/authorization_code.png" />
-        </section>
-      </section> -->
         <section>
           <img src="/images/client_credentials.png" />
           <pre class="fragment">
@@ -202,6 +167,15 @@
         <section>
           <section>
             <img src="/images/implicit.png" />
+            <aside class="notes">
+              <ul>
+                <li>SPA, user-agent based apps</li>
+                <li>
+                  auth server devuelve directamente un token en lugar de un
+                  codigo
+                </li>
+              </ul>
+            </aside>
           </section>
           <section>
             <pre>
@@ -285,7 +259,14 @@
           <img src="/images/refresh.png" alt="" />
         </section>
         <section>
-          <p>Gracias por asistir :D</p>
+          <h4>Para saber más...</h4>
+          <ul>
+            <li>¿Cómo gestionar tokens?</li>
+            <li class="fragment">OpenID</li>
+          </ul>
+        </section>
+        <section>
+          <img src="/images/meme.jpg" alt="" />
         </section>
       </div>
     </div>
